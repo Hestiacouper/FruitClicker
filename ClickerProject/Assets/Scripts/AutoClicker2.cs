@@ -5,14 +5,17 @@ using UnityEngine.UI;
 using TMPro;
 
 
-public class AutoClicker : MonoBehaviour
+public class AutoClicker2 : MonoBehaviour
 {
     public bool autoClicker = false;
     [SerializeField] int valueIncrease = 0;
     int delay = 1;
-    int value = 20;
+    int value = 100;
     [SerializeField] TextMeshProUGUI NotEnoughValue;
 
+    private void Start()
+    {
+    }
     void Update()
     {
         if (!autoClicker)
@@ -27,12 +30,12 @@ public class AutoClicker : MonoBehaviour
         ClickerScript.score += valueIncrease;
         autoClicker = false;
     }
-    public void UpgradeClicker()
+    public void UpgradeClicker2()
     {
         if (ClickerScript.score >= value)
         {
             ClickerScript.score -= value;
-            valueIncrease++;
+            valueIncrease+= 5;
         }
         else
         {
