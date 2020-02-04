@@ -42,13 +42,15 @@ public class AutoClicker : MonoBehaviour
     }
     IEnumerator NotEnough()
     {
-        Debug.Log("on");
         Texte.SetActive(true);
         NotEnoughValue.text = "Not enough value";
         NotEnoughValue.GetComponent<Animation>().Play("statusAnimation");
         yield return new WaitForSeconds(delay);
         Texte.SetActive(false);
-        Debug.Log("off");
+    }
+    public int GetValueIncrease()
+    {
+        return valueIncrease;
     }
 }
 
