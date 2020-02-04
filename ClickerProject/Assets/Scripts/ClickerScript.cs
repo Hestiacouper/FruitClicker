@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ClickerScript : MonoBehaviour
 {
-    private int score = 0;
+    public static int score = 0;
 
 
     

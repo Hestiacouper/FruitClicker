@@ -13,6 +13,6 @@ public class ScoreDisplayer : MonoBehaviour
     void Update()
     {
         String textScore = clickerScript.GetScore().ToString();
-        scoreDisplay.text = textScore;
+        scoreDisplay.text = "Calorie : " + textScore;
     }
 }
