@@ -12,6 +12,7 @@ public class AutoClicker : MonoBehaviour
     int delay = 1;
     int value = 20;
     [SerializeField] TextMeshProUGUI NotEnoughValue;
+    [SerializeField] GameObject Texte;
 
     void Update()
     {
@@ -36,9 +37,18 @@ public class AutoClicker : MonoBehaviour
         }
         else
         {
-            NotEnoughValue.text = "Not enough value";
-            NotEnoughValue.GetComponent<Animation>().Play("statusAnimation");
+           StartCoroutine(NotEnough());
         }
+    }
+    IEnumerator NotEnough()
+    {
+        Debug.Log("on");
+        Texte.SetActive(true);
+        NotEnoughValue.text = "Not enough value";
+        NotEnoughValue.GetComponent<Animation>().Play("statusAnimation");
+        yield return new WaitForSeconds(delay);
+        Texte.SetActive(false);
+        Debug.Log("off");
     }
 }
 
